@@ -6,8 +6,9 @@
         <title>Wolf CMS</title>
         <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
         <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+        @livewireStyles
         @yield('styles')
-      
+        <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
 
@@ -26,7 +27,10 @@
         <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         @yield('scripts')
+
+        @livewireScripts
      
         <script src="assets/dist/js/adminlte.min.js"></script>
+        <script src="assets/dist/js/scripts.js"></script>
     </body>
 </html>
