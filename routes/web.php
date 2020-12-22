@@ -17,6 +17,6 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('admin/posts/index');
 });
-
+Route::get('/posts/novo', [PostController::class, 'create']);
 Route::resource('posts', PostController::class);
 Route::post('/posts',[PostController::class, 'index']);

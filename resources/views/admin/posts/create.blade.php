@@ -12,8 +12,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Posts</li>
+                        <li class="breadcrumb-item"><a href="#">Posts</a></li>
+                        <li class="breadcrumb-item active">Novo</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,15 +27,12 @@
             <div class="row">
                 <div class="col-12 bg-white py-3">
 
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary text-white"  href="/posts/novo"><i class="fas fa-plus mr-2"></i>Adicionar Post</a>
-                    </div>
+                    <form method="POST" action="/posts/">
+                        {{csrf_field()}}
 
-                    
-
-                    <livewire:post.list-posts>
-                    </livewire>
-
+                        
+                    </form>
+                  
 
                 </div>
             </div>

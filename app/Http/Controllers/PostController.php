@@ -14,9 +14,6 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->method() == 'POST'){
-            dd($request->all());
-        }
         return view('admin/posts/index');
     }
 
@@ -27,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/posts/create');
     }
 
     /**
