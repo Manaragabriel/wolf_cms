@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-
+use chillerlan\QRCode\QRCode;
+use App\Http\Requests\PostRequest;
 class PostController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
+
         return view('admin/posts/index');
     }
 
@@ -24,6 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
+     
         return view('admin/posts/create');
     }
 
@@ -33,9 +36,14 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        try{
+            Post::create($request->all());
+            return redirect('posts');
+        }catch(\Exception $e){
+            dd($e->getMessage());
+        }
     }
 
     /**
