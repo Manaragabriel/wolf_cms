@@ -5,7 +5,7 @@
 
             <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <input type="text" wire:model="search" name="table_search" class="form-control float-right" placeholder="Pesquisar">
 
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -19,20 +19,32 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>User</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Reason</th>
+                        <th>Titulo</th>
+                        <th>Ação</th>
+                      
                     </tr>
                 </thead>
                 <tbody>
+               
+                @foreach($posts as $post)
                     <tr>
-                        <td>183</td>
-                        <td>John Doe</td>
-                        <td>11-7-2014</td>
-                        <td><span class="tag tag-success">Approved</span></td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                        <td>{{$post->id}}</td>
+                        <td>{{$post->title}}</td>
+                        <td>
+                            <a class="btn" href="/posts/editar/{{$post->id}}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form method="post" action="/posts/{{$post->id}}" class="d-inline">
+                            {{csrf_field()}}
+                            {{method_field('delete')}}
+                                <button class="btn" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                        
                     </tr>
+                @endforeach
 
                 </tbody>
             </table>

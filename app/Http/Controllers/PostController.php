@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use chillerlan\QRCode\QRCode;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\UpdatePost;
 class PostController extends Controller
 {
     /**
@@ -63,9 +64,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+    
+        return view('admin/posts/edit', ['post' => Post::find($id)]);
     }
 
     /**
@@ -75,9 +77,14 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePost $request,$id)
     {
-        //
+        try{
+            Post::find($id)->update($request->all());
+            return redirect('posts');
+        }catch(\Exception $e){
+            dd($e->getMessage());
+        }
     }
 
     /**
@@ -86,8 +93,13 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        try{
+            Post::find($id)->delete();
+            return redirect('posts');
+        }catch(\Exception $e){
+            dd($e->getMessage());
+        }
     }
 }
