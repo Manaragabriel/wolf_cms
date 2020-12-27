@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('styles')
+    <link rel="stylesheet" href="/assets/plugins/summernote/summernote-bs4.min.css"/>
+@endsection
+
 @section('content')
 
 <div class="content-wrapper">
@@ -95,4 +99,8 @@
 
 </div>
 
+@endsection
+
+@section('scripts')
+    <script src="/assets/plugins/summernote/summernote-bs4.min.js"></script>
 @endsection

@@ -33,5 +33,6 @@
         @stack('scripts-livewire')
         <script src="/assets/dist/js/adminlte.min.js"></script>
         <script src="/assets/dist/js/scripts.js"></script>
+       
     </body>
 </html>

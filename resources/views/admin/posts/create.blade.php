@@ -1,5 +1,10 @@
 @extends('layout')
 
+
+@section('styles')
+    <link rel="stylesheet" href="/assets/plugins/summernote/summernote-bs4.min.css"/>
+@endsection
+
 @section('content')
 
 <div class="content-wrapper">
@@ -64,7 +69,7 @@
                             <div class="col-12 col-lg-12">
                                 <div class="form-group">
                                     <label for="subtitle">Conteudo*</label>
-                                    <textarea  name="content" id="content" class="form-control"
+                                    <textarea  name="content"  id="content" class="form-control"
                                     >
                                     {{old('content')}}
                                     </textarea>
@@ -94,4 +99,8 @@
 
 </div>
 
+@endsection
+
+@section('scripts')
+    <script src="/assets/plugins/summernote/summernote-bs4.min.js"></script>
 @endsection
