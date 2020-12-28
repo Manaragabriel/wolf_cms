@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use chillerlan\QRCode\QRCode;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\UpdatePost;
+use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
     /**
@@ -40,7 +41,18 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         try{
-            Post::create($request->all());
+            $post = $request->all();
+            
+            if($request->hasFile('image')){
+                $file_name = $request->file('image')->getClientOriginalName();
+                $file_path = 'public/thumbs/'.$file_name;
+                Storage::disk('local')->put($file_path, file_get_contents($request->file('image')));
+                $post['image'] = $file_name;
+                
+            }
+            $post = new Post($post);
+            $post->setSlug();
+            $post->save();
             return redirect('posts');
         }catch(\Exception $e){
             dd($e->getMessage());

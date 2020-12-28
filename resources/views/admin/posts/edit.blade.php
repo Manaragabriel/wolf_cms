@@ -81,6 +81,20 @@
                         </div>
 
 
+                        <div class="row">
+                            <div class="col-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="subtitle">Imagem de capa</label>
+                                    <input type="file" name="image" id="" class="form-control"/>
+                                
+                                    
+                                </div>
+                                @error('image')
+                                    <span class="text-danger">{{$errors->first('image')}}</span>
+                                @enderror
+                            </div>
+                        </div>
+
                         
                         <div class="d-flex justify-content-end">
                             <button class="btn btn-primary text-white" type="submit">Enviar</button>

@@ -26,6 +26,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required|max:256',
             'subtitle' => 'nullable|max:256',
+            'slug' => 'nullable',
             'content' => 'required',
         ];
     }
