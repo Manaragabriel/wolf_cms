@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="/posts/{{$post->id}}">
+                    <form method="POST" enctype="multipart/form-data" action="/posts/{{$post->id}}">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
                        

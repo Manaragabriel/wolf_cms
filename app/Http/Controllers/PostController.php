@@ -41,8 +41,8 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         try{
-            $post = $request->all();
-            
+            $post = $request->validated();
+          
             if($request->hasFile('image')){
                 $file_name = $request->file('image')->getClientOriginalName();
                 $file_path = 'public/thumbs/'.$file_name;
@@ -92,7 +92,18 @@ class PostController extends Controller
     public function update(UpdatePost $request,$id)
     {
         try{
-            Post::find($id)->update($request->all());
+            $updatePost = $request->validated();
+            $post = Post::where('id',$id)->first();
+            if($request->hasFile('image')){
+                $file_name = $request->file('image')->getClientOriginalName();
+                $file_path = 'public/thumbs/'.$file_name;
+                Storage::disk('local')->put($file_path, file_get_contents($request->file('image')));
+                Storage::disk('local')->delete('public/thumbs/'.$post['image']);
+                $updatePost['image'] = $file_name; 
+            }
+            $updatePost = new Post($updatePost);
+            $updatePost->setSlug();
+            $post->update($updatePost->toArray());
             return redirect('posts');
         }catch(\Exception $e){
             dd($e->getMessage());
