@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::get('/posts/novo', [PostController::class, 'create']);
 Route::get('/posts/editar/{id}', [PostController::class, 'edit']);
 Route::resource('posts', PostController::class);
+
+Route::get('/usuarios/novo', [UserController::class, 'create']);
+Route::get('/usuarios/editar/{id}', [UserController::class, 'edit']);
+Route::resource('usuarios', UserController::class);
