@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\UpdatePost;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
     /**
@@ -92,6 +93,7 @@ class PostController extends Controller
     {
         try{
             $updatePost = $request->validated();
+            $updatePost['slug'] = Str::slug($updatePost['title']);
             $post = Post::where('id',$id)->first();
             if($request->hasFile('image')){
                 $file_name = $request->file('image')->getClientOriginalName();
@@ -100,9 +102,8 @@ class PostController extends Controller
                 Storage::disk('local')->delete('public/thumbs/'.$post['image']);
                 $updatePost['image'] = $file_name; 
             }
-            $updatePost = new Post($updatePost);
-            $updatePost->setSlug();
-            $post->update($updatePost->toArray());
+
+            $post->update($updatePost);
             return redirect('posts');
         }catch(\Exception $e){
             dd($e->getMessage());
