@@ -19,7 +19,7 @@ class AuthController extends Controller
             $user = User::where('email', $authData['email'])->first();
             if(!empty($user)){
                 if(Auth::attempt($authData)){
-                    return redirect('dashboard');
+                    return redirect('admin/dashboard');
                 }
                 return back()->withErrors([
                     'password' => 'Senha incorreta',
@@ -34,5 +34,12 @@ class AuthController extends Controller
             dd($e->getMessage());
             return redirect()->back();
         }
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/admin/login');
     }
 }

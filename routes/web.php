@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,16 +16,14 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin/posts/index');
-});
 
 
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'store']);
+Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
+Route::post('/admin/login', [AuthController::class, 'store']);
+Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function(){
-    
+    Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/posts/novo', [PostController::class, 'create']);
     Route::get('/posts/editar/{id}', [PostController::class, 'edit']);
     Route::resource('posts', PostController::class);
