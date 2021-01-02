@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,6 @@ Route::resource('posts', PostController::class);
 Route::get('/usuarios/novo', [UserController::class, 'create']);
 Route::get('/usuarios/editar/{id}', [UserController::class, 'edit']);
 Route::resource('usuarios', UserController::class);
+
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'store']);
