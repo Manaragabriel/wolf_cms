@@ -31,10 +31,10 @@
                         <td>{{$post->id}}</td>
                         <td>{{$post->title}}</td>
                         <td>
-                            <a class="btn" href="/posts/editar/{{$post->id}}">
+                            <a class="btn" href="/admin/posts/editar/{{$post->id}}">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <form method="post" action="/posts/{{$post->id}}" class="d-inline">
+                            <form method="post" action="/admin/posts/{{$post->id}}" class="d-inline">
                             {{csrf_field()}}
                             {{method_field('delete')}}
                                 <button class="btn" type="submit">

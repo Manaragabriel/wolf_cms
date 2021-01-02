@@ -25,7 +25,7 @@
              with font-awesome or any other icon font library -->
         
         <li class="nav-item">
-          <a href="/paginas" class="nav-link">
+          <a href="/admin/paginas" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Pagínas
@@ -44,7 +44,7 @@
             <ul class="nav nav-treeview">
              
               <li class="nav-item">
-                <a href="/posts" class="nav-link">
+                <a href="/admin/posts" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Posts</p>
                 </a>
@@ -61,7 +61,7 @@
           </li>
     
         <li class="nav-item">
-          <a href="/usuarios" class="nav-link">
+          <a href="/admin/usuarios" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Usuários

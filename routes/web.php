@@ -18,13 +18,18 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('admin/posts/index');
 });
-Route::get('/posts/novo', [PostController::class, 'create']);
-Route::get('/posts/editar/{id}', [PostController::class, 'edit']);
-Route::resource('posts', PostController::class);
 
-Route::get('/usuarios/novo', [UserController::class, 'create']);
-Route::get('/usuarios/editar/{id}', [UserController::class, 'edit']);
-Route::resource('usuarios', UserController::class);
 
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'store']);
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function(){
+    
+    Route::get('/posts/novo', [PostController::class, 'create']);
+    Route::get('/posts/editar/{id}', [PostController::class, 'edit']);
+    Route::resource('posts', PostController::class);
+    
+    Route::get('/usuarios/novo', [UserController::class, 'create']);
+    Route::get('/usuarios/editar/{id}', [UserController::class, 'edit']);
+    Route::resource('usuarios', UserController::class);
+});

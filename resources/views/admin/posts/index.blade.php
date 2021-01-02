@@ -28,7 +28,7 @@
                 <div class="col-12 bg-white py-3">
 
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary text-white"  href="/posts/novo"><i class="fas fa-plus mr-2"></i>Adicionar Post</a>
+                        <a class="btn btn-primary text-white"  href="/admin/posts/novo"><i class="fas fa-plus mr-2"></i>Adicionar Post</a>
                     </div>
 
                     
