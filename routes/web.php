@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Site\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 
-
+Route::get('/', [MainController::class, 'index']);
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
 Route::post('/admin/login', [AuthController::class, 'store']);
 Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
