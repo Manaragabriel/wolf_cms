@@ -281,14 +281,19 @@
             </div><!-- /.auto-container -->
         </section><!-- /.service-block-three -->
 
+
         <section class="service-block-three">
             <div class="container">
-                <h4 class="text-center fadeInLeft">Parcerias</h4>
+               
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
                         <div class="about-section-three__summery py-5">
-                            <p>Você possuí demandas de tecnólogia na sua empresa e precisa de alguém para atende-las ? </p>
-                            <p>Com a Wolf8B, você pode terceirizar suas demandas de tecnólogia, para assim, poupar custos, reduzir burocracia e poder se focar em outras atividades.
+                            <div class="sec-title-two text-left">
+                                <p class="m-0 p-0">parcerias e terceirizações</p>
+                                <h2>Terceirize as demandas de sua empresa</h2>
+                            </div><!-- /.sec-title-two -->
+                            <p  class="m-0 p-0">Você possuí demandas de tecnólogia na sua empresa e precisa de alguém para atende-las ? </p>
+                            <p class="m-0 p-0">Com a Wolf8B, você pode terceirizar suas demandas de tecnólogia, para assim, poupar custos, reduzir burocracia e poder se focar em outras atividades.
                             <br/>
                                 Podemos cuidar desde a programação da sua demanda até a hospedagem, para que você não tenha dores de cabeça e possa ter a melhor eficiência em sua empresa
                             </p>
@@ -303,6 +308,54 @@
                     </div><!-- /.col-md-12 -->
                 </div>
             
+            </div>
+        </section>
+
+        <section id="contato"  class="p-5">
+            <div class="container">
+                <h4 class="text-center fadeInLeft">Venha falar com a gente!</h4>
+                <div class="row">
+                  
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="name" class="font-weight-bold">Seu Nome *:</label>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Digite seu nome"/>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="email" class="font-weight-bold">Seu Email *:</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Digite seu email"/>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="phone" class="font-weight-bold">Seu Telefone / Celular *:</label>
+                                <input type="text" name="phon" id="phone" class="form-control" placeholder="Digite seu telefone"/>
+                            </div>
+                        </div>
+                    
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="company" class="font-weight-bold">Nome da sua empresa *:</label>
+                                <input type="text" name="company" id="company" class="form-control" placeholder="Digite o nome da sua empresa "/>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="message" class="font-weight-bold">Deixe sua mensagem *:</label>
+                                <textarea rows="7" name="message" id="company" class="form-control" placeholder="Deixe sua mensagem "></textarea>
+                            </div>
+                        </div>
+                  
+                        <div class="text-center">
+                            <a href="about.html" class="theme-btn theme-btn-dark-hover btn-style-three py-3">Enviar</a>
+                        </div>
+                </div>
+
             </div>
         </section>
 
