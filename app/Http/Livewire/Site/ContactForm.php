@@ -11,6 +11,7 @@ class ContactForm extends Component
     public $phone;
     public $company;
     public $message;
+    public $accept;
 
     protected $rules = [
         'name' => 'required|min:2',
@@ -18,11 +19,13 @@ class ContactForm extends Component
         'phone' => 'required|min:11',
         'company' => 'required|min:2',
         'message' => 'required|min:10',
+        'accept' => 'required'
     ];
 
 
     public function sendContact(){
-        $this->validate();
+        
+        
     }
     public function render()
     {

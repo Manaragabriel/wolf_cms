@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> 
 
 
 <!-- about section -->
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-6">
                 <div class="about-section-three__image">
-                    <img src="/assets_site/images/update-1-12-2020/resources/about-1-1.jpg" alt="">
+                    <img src="{{url('storage/thumbs/gestao-projetos.png')}}" alt="">
                 </div><!-- /.about-section-three__image -->
             </div><!-- /.col-md-12 -->
             <div class="col-md-12 col-lg-6">
@@ -279,15 +279,4 @@
 </section><!-- /.news-two -->
 
 
-<!-- call to action -->
-<section class="call-to-section-three jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% 80%">
-    <img src="/assets_site/images/update-1-12-2020/background/call-bg-1-1.jpg" class="jarallax-img" alt="">
-    <div class="auto-container">
-        <h3>We’re Helping Over 8000 Businesses</h3>
-        <div class="button-wrap">
-            <a href="about.html" class="theme-btn btn-style-three">Discover More</a>
-            <!-- /.theme-btn button-style-three -->
-        </div><!-- /.button-wrap -->
-    </div><!-- /.auto-container -->
-</section><!-- /.call-to-section-three -->
 @endsection

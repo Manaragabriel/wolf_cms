@@ -19,6 +19,11 @@ use App\Http\Controllers\Site\MainController;
 
 
 Route::get('/', [MainController::class, 'index']);
+
+Route::group(['prefix' => 'servicos'], function(){
+    Route::get('/sites-personalizados', [MainController::class, 'service_site']);
+});
+
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
 Route::post('/admin/login', [AuthController::class, 'store']);
 Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');

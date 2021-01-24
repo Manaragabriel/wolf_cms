@@ -9,6 +9,7 @@
                       @error('name')
                         <span class="text-danger">{{$message}}</span>
                       @enderror
+                      {{$name}}
                   </div>
 
 
@@ -51,7 +52,16 @@
                         <span class="text-danger">{{$message}}</span>
                       @enderror
                   </div>
-            
+
+                  <div class="col-sm-12 col-lg-12">
+                      <div class="form-group">
+                         <input type="checkbox" value="true" wire:model="accept"/><span class="ml-2">Eu autorizo a Wolf8b Tecnólogia a armazenar meus dados fornecidos por este formulário</span>
+                      </div>
+                      @error('message')
+                        <span class="text-danger">{{$message}}</span>
+                      @enderror
+                  </div>
+
                   <div class="text-center">
                       <button type="submit" class="theme-btn theme-btn-dark-hover btn-style-three py-3">Enviar</button>
                   </div>

@@ -17,4 +17,7 @@ class MainController extends Controller
         return view('site/index');
     }
 
+    public function service_site(){
+        return view('site/service_site');
+    }
 }
