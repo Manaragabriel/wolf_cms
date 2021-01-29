@@ -22,6 +22,7 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::group(['prefix' => 'servicos'], function(){
     Route::get('/sites-personalizados', [MainController::class, 'service_site']);
+    Route::get('/sistemas-personalizados', [MainController::class, 'service_system']);
 });
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
