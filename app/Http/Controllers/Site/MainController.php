@@ -24,4 +24,7 @@ class MainController extends Controller
     public function service_system(){
         return view('site/service_system');
     }
+    public function service_ecommerce(){
+        return view('site/service_ecommerce');
+    }
 }
